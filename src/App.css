@@ -1,38 +1,200 @@
-.App {
-  text-align: center;
+.body {
+  background-color: #a8e3f3;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  color: #01100f;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+label {
+  color: hsla(176, 56%, 11%, 0.7);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  width: 800px;
+  height: 550px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 10px;
+}
+
+.calculator {
+  padding: 10px 40px;
+  height: 500px;
+}
+
+.group {
+  display: flex;
+}
+
+.input-amount {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-amount input {
+  width: 310px;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.row {
+  gap: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.input-term,
+.input-rate {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-term input,
+.input-rate input {
+  width: 145px;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.radio {
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 10px;
+  font-weight: 700;
+}
+
+.group-input {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  background-color: rgb(213, 213, 37);
+  border: none;
+  border-radius: 40px;
+  width: 240px;
+  color: darkblue;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+#repayment:checked+label:before {
+  background-color: green;
+  border-color: green;
+}
+
+.radio input[type="radio"]:checked+label:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+/* result container */
+
+.results-container {
+  background-color: hsl(226, 31%, 21%, 0.9);
+  color: white;
+  border-bottom-left-radius: 70px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  font-size: 15px;
+  padding-bottom: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.logo {
+  width: 150px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.mortgage-results {
+  margin-top: 10px;
+  border-top: 5px solid yellow;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  font-size: 12px;
+  padding: 10px;
+}
+
+.repay {
+  color: yellow;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    height: 100;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
   }
-  to {
-    transform: rotate(360deg);
+
+  .calculator {
+    height: 100%;
+    padding: 20px;
+  }
+
+  .input-amount input {
+    width: 90%;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  button {
+    width: 100%;
+    padding: 20px;
+    border-radius: 50px;
+  }
+
+  .results-container {
+    border-radius: 0px;
+    height: 100%;
+  }
+
+  .mortgage-results {
+    background-color: #252d47;
+    width: 80%;
+    height: 100%;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .radio {
+    width: 90%;
+  }
+
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .input-term input,
+  .input-rate input {
+    width: 90%;
   }
 }
