@@ -36,8 +36,12 @@ export function Card() {
                     (monthlyRate * Math.pow(1 + monthlyRate, numPayments))) /
                 (Math.pow(1 + monthlyRate, numPayments) - 1)
             ).toFixed(2);
+
+            calculatedRepay = (calculatedTotal * numPayments).toFixed(2);
+
         } else if ("interest") {
-            calculatedRepay = (mortgageAmount * monthlyRate).toFixed(2);
+            calculatedTotal = (mortgageAmount * monthlyRate).toFixed(2);
+            calculatedRepay = (calculatedTotal * numPayments).toFixed(2);
         } else {
             alert("Please select a mortgage type.");
         }
